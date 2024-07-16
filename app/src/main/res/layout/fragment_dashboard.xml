@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_1"
+    tools:context=".view.bottomNavigation.ui.dashboard.DashboardFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/titulo_header"
+            android:layout_width="wrap_content"
+            android:layout_height="150.px"
+            android:gravity="bottom"
+            android:text="@string/add_produto"
+            android:textSize="20.sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginStart="50.px"
+            android:layout_marginBottom="50.px"
+            android:layout_marginTop="50.px"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        android:padding="16.dp">
+
+        <EditText
+            android:id="@+id/descricao"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:importantForAutofill="no"
+            android:padding="16.dp"
+            android:layout_marginTop="10.dp"
+            android:hint="@string/descricao"
+            android:textSize="16.sp"
+            android:background="@drawable/background_textedit"
+            android:lines="5"
+            android:inputType="textMultiLine"
+            android:gravity="top"
+            />
+
+        <EditText
+            android:id="@+id/codbarras"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:importantForAutofill="no"
+            android:padding="16.dp"
+            android:layout_marginTop="10.dp"
+            android:hint="@string/codbarras"
+            android:textSize="16.sp"
+            android:background="@drawable/background_textedit"
+            android:maxLines="1"
+            android:inputType="number"
+            />
+
+        <EditText
+            android:id="@+id/categoria"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:importantForAutofill="no"
+            android:padding="16.dp"
+            android:layout_marginTop="10.dp"
+            android:hint="@string/categoria"
+            android:textSize="16.sp"
+            android:background="@drawable/background_textedit"
+            android:maxLines="1"
+            android:inputType="text"
+            />
+
+        <EditText
+            android:id="@+id/valor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:importantForAutofill="no"
+            android:padding="16.dp"
+            android:layout_marginTop="10.dp"
+            android:hint="@string/valor"
+            android:textSize="16.sp"
+            android:background="@drawable/background_textedit"
+            android:maxLines="1"
+            android:inputType="text"
+            />
+
+        <EditText
+            android:id="@+id/quantidade"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:importantForAutofill="no"
+            android:padding="16.dp"
+            android:layout_marginTop="10.dp"
+            android:hint="@string/quantidade"
+            android:textSize="16.sp"
+            android:background="@drawable/background_textedit"
+            android:maxLines="1"
+            android:inputType="number"
+            />
+
+        <EditText
+            android:id="@+id/data_vencimento"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:importantForAutofill="no"
+            android:padding="16.dp"
+            android:layout_marginTop="10.dp"
+            android:hint="@string/data_vencimento"
+            android:textSize="16.sp"
+            android:background="@drawable/background_textedit"
+            android:maxLines="1"
+            android:inputType="text"
+            />
+
+        <Button
+            android:id="@+id/add_produto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_btn"
+            android:text="@string/add_produto"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16.sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20.dp"
+            android:padding="15.dp"
+            />
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

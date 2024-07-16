@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+    tools:context=".view.formCadastro.formCadastro"
+    android:background="@color/white_1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/titulo_form_cadastro"
+        android:textColor="@color/black"
+        android:textSize="30.dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20.dp"
+        />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="emailAddress"
+        android:hint="@string/hint_email"
+        android:layout_marginTop="20dp"
+        android:inputType="textEmailAddress"
+        android:layout_marginStart="20.dp"
+        android:layout_marginEnd="20.dp"
+        android:layout_marginBottom="10.dp"
+        android:maxLines="1"
+        android:background="@color/white"
+        android:padding="15.dp"
+        />
+
+    <EditText
+        android:id="@+id/senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="password"
+        android:hint="@string/hint_senha"
+        android:inputType="textPassword"
+        android:layout_marginStart="20.dp"
+        android:layout_marginEnd="20.dp"
+        android:layout_marginBottom="10.dp"
+        android:background="@color/white"
+        android:padding="15.dp"
+        />
+
+    <EditText
+        android:id="@+id/conf_senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="password"
+        android:hint="@string/conf_senha"
+        android:inputType="textPassword"
+        android:layout_marginStart="20.dp"
+        android:layout_marginEnd="20.dp"
+        android:background="@color/white"
+        android:padding="15.dp"
+        />
+
+    <Button
+        android:id="@+id/btnCadastrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20.dp"
+        android:layout_marginEnd="20.dp"
+        android:text="@string/btn_cadastro"
+        android:textSize="16.sp"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        />
+
+    <TextView
+        android:id="@+id/btn_navigate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@android:color/transparent"
+        android:text="@string/ir_login"
+        android:layout_marginTop="10.dp"
+        android:textAllCaps="false"
+        android:textSize="16.sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        />
+</LinearLayout>
