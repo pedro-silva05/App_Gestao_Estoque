@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.controledeestoque.R
 
-class ProdutosAdapter(private val produtoList: ArrayList<Produto>): RecyclerView.Adapter<ProdutosAdapter.MyViewHolder>() {
+class ProdutosAdapter(private var produtoList: ArrayList<Produto>): RecyclerView.Adapter<ProdutosAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.produto_item,
@@ -28,6 +28,10 @@ class ProdutosAdapter(private val produtoList: ArrayList<Produto>): RecyclerView
         holder.categoria.text = dados.categoria
         holder.valor.text = dados.valor.toString()
         holder.quantidade.text = dados.quantidade.toString()
+    }
+
+    fun searchData(searchList: ArrayList<Produto>){
+        produtoList = searchList
     }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){

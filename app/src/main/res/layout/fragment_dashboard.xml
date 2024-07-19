@@ -34,114 +34,114 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@+id/header"
-        android:padding="16.dp">
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <EditText
-            android:id="@+id/descricao"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:importantForAutofill="no"
-            android:padding="16.dp"
-            android:layout_marginTop="10.dp"
-            android:hint="@string/descricao"
-            android:textSize="16.sp"
-            android:background="@drawable/background_textedit"
-            android:lines="5"
-            android:inputType="textMultiLine"
-            android:gravity="top"
-            />
-
-        <EditText
-            android:id="@+id/codbarras"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:importantForAutofill="no"
-            android:padding="16.dp"
-            android:layout_marginTop="10.dp"
-            android:hint="@string/codbarras"
-            android:textSize="16.sp"
-            android:background="@drawable/background_textedit"
-            android:maxLines="1"
-            android:inputType="number"
-            />
-
-        <EditText
-            android:id="@+id/categoria"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:importantForAutofill="no"
-            android:padding="16.dp"
-            android:layout_marginTop="10.dp"
-            android:hint="@string/categoria"
-            android:textSize="16.sp"
-            android:background="@drawable/background_textedit"
-            android:maxLines="1"
-            android:inputType="text"
-            />
-
-        <EditText
-            android:id="@+id/valor"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:importantForAutofill="no"
-            android:padding="16.dp"
-            android:layout_marginTop="10.dp"
-            android:hint="@string/valor"
-            android:textSize="16.sp"
-            android:background="@drawable/background_textedit"
-            android:maxLines="1"
-            android:inputType="text"
-            />
-
-        <EditText
-            android:id="@+id/quantidade"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:importantForAutofill="no"
-            android:padding="16.dp"
-            android:layout_marginTop="10.dp"
-            android:hint="@string/quantidade"
-            android:textSize="16.sp"
-            android:background="@drawable/background_textedit"
-            android:maxLines="1"
-            android:inputType="number"
-            />
-
-        <EditText
-            android:id="@+id/data_vencimento"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:importantForAutofill="no"
-            android:padding="16.dp"
-            android:layout_marginTop="10.dp"
-            android:hint="@string/data_vencimento"
-            android:textSize="16.sp"
-            android:background="@drawable/background_textedit"
-            android:maxLines="1"
-            android:inputType="text"
-            />
-
-        <Button
-            android:id="@+id/add_produto"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/background_btn"
-            android:text="@string/add_produto"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="16.sp"
-            android:textStyle="bold"
-            android:layout_marginTop="20.dp"
-            android:padding="15.dp"
-            />
+            android:orientation="vertical"
+            android:padding="16.dp"
+            android:paddingBottom="180.px">
 
-    </LinearLayout>
+            <EditText
+                android:id="@+id/descricao"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10.dp"
+                android:background="@drawable/background_textedit"
+                android:gravity="top"
+                android:hint="@string/descricao"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine"
+                android:lines="5"
+                android:padding="16.dp"
+                android:textSize="16.sp" />
+
+            <EditText
+                android:id="@+id/codbarras"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10.dp"
+                android:background="@drawable/background_textedit"
+                android:hint="@string/codbarras"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLines="1"
+                android:padding="16.dp"
+                android:textSize="16.sp" />
+
+            <EditText
+                android:id="@+id/categoria"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10.dp"
+                android:background="@drawable/background_textedit"
+                android:hint="@string/categoria"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLines="1"
+                android:padding="16.dp"
+                android:textSize="16.sp" />
+
+            <EditText
+                android:id="@+id/valor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10.dp"
+                android:background="@drawable/background_textedit"
+                android:hint="@string/valor"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLines="1"
+                android:padding="16.dp"
+                android:textSize="16.sp" />
+
+            <EditText
+                android:id="@+id/quantidade"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10.dp"
+                android:background="@drawable/background_textedit"
+                android:hint="@string/quantidade"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLines="1"
+                android:padding="16.dp"
+                android:textSize="16.sp" />
+
+            <EditText
+                android:id="@+id/data_vencimento"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10.dp"
+                android:background="@drawable/background_textedit"
+                android:hint="@string/data_vencimento"
+                android:importantForAutofill="no"
+                android:inputType="date"
+                android:maxLines="1"
+                android:padding="16.dp"
+                android:textSize="16.sp" />
+
+            <Button
+                android:id="@+id/add_produto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20.dp"
+                android:background="@drawable/background_btn"
+                android:padding="15.dp"
+                android:text="@string/add_produto"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16.sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+
 
 
 

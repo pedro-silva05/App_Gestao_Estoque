@@ -7,7 +7,7 @@
     android:background="@color/white_1"
     tools:context=".view.bottomNavigation.ui.home.HomeFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,44 +17,31 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
-            android:id="@+id/profile_icon"
-            android:layout_width="100.px"
+            android:id="@+id/menu_hamburguer"
+            android:layout_width="75.px"
             android:layout_height="150.px"
-            android:layout_margin="50.px"
             android:layout_marginStart="50.px"
-            android:layout_marginEnd="50.px"
-            android:background="@android:color/transparent"
-            android:contentDescription="@string/perfil"
+            android:contentDescription="@string/menu"
             android:scaleType="centerCrop"
-            android:layout_marginBottom="50.px"
-            android:src="@drawable/baseline_menu_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHeight_default="wrap"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintVertical_bias="0.5"
-            app:layout_constraintWidth_default="wrap"
-            />
+            android:src="@drawable/baseline_menu_24"/>
 
-        <EditText
-            android:id="@+id/search_input"
-            android:layout_width="0.dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="150.px"
-            android:autofillHints=""
-            android:hint="@string/pesquisar"
-            android:inputType="text"
-            android:textSize="14.sp"
-            android:padding="16dp"
-            android:background="@drawable/background_search_bar"
-            android:drawableEnd="@drawable/baseline_search_24"
-            android:layout_marginStart="50.px"
-            android:layout_marginEnd="50.px"
-            android:layout_marginBottom="50.px"
-            android:layout_marginTop="50.px"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/profile_icon"
-            app:layout_constraintEnd_toEndOf="parent"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_margin="50.px">
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search_input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:queryHint="@string/pesquisar"
+                app:iconifiedByDefault="false"
+                android:background="@drawable/background_search_bar"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
 
     <ScrollView
         android:layout_width="match_parent"
