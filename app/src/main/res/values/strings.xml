@@ -9,7 +9,7 @@
     <string name="ir_cadastro">Ainda não tem uma conta? Cadastre-se!</string>
     <string name="ir_login">Já tem uma conta? Faça LogIn!</string>
     <string name="conf_senha">Confirmar senha</string>
-    <string name="pesquisar">Pesquisar produtos</string>
+    <string name="pesquisar">Pesquisar</string>
     <string name="menu">menu</string>
     <string name="add_produto">Adicionar produto</string>
 
@@ -44,4 +44,18 @@
 
     <string name="open">open</string>
     <string name="close">close</string>
+    <string name="estoque">Estoque</string>
+    <string name="fiado">Fiado</string>
+    <string name="voltar">Voltar</string>
+    <string name="fiados_cadastrados">Fiados Cadastrados</string>
+    <string name="adicionar_fiado">Adicionar Fiado</string>
+    <string name="realizar_venda">Realizar Venda</string>
+    <string name="carregando">Carregando...</string>
+    <string name="total_da_compra">Total da compra:</string>
+    <string name="r">R$</string>
+    <string name="pagamento">Pagamento</string>
+    <string name="carrinho_de_vendas">Carrinho de vendas</string>
+    <string name="escanear_codigo">Escanear código</string>
+    <string name="venda">Venda</string>
+    <string name="adicionar_ao_carrinho">Adicionar ao carrinho</string>
 </resources>

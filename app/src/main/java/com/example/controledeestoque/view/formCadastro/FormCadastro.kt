@@ -39,8 +39,7 @@ class formCadastro : AppCompatActivity() {
 
         val navigate = findViewById<TextView>(R.id.btn_navigate)
         navigate.setOnClickListener{
-            val intent = Intent(this, FormLogin::class.java)
-            startActivity(intent)
+            irParaLogin()
         }
 
         binding.btnCadastrar.setOnClickListener{
@@ -65,7 +64,7 @@ class formCadastro : AppCompatActivity() {
                         toast.show()
                         binding.email.setText("")
                         binding.senha.setText("")
-
+                        irParaLogin()
                     }
                 }.addOnFailureListener{ exception ->
                     val msgError = when(exception){
@@ -82,5 +81,10 @@ class formCadastro : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun irParaLogin(){
+        val intent = Intent(this, FormLogin::class.java)
+        startActivity(intent)
     }
 }

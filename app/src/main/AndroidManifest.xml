@@ -15,10 +15,24 @@
         android:theme="@style/Theme.ControleDeEstoque"
         tools:targetApi="31">
         <activity
-            android:name=".view.bottomNavigation.MainActivity"
+            android:name=".view.drawerNavigation.telas.realizarVenda.AddProdutosCarrinhoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.drawerNavigation.telas.realizarVenda.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.drawerNavigation.telas.fiado.DetalhesFiadoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.drawerNavigation.telas.fiado.FormAddFiadoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.drawerNavigation.telas.estoque.formAddProdutos"
+            android:exported="false" />
+        <activity
+            android:name=".view.drawerNavigation.DrawerActivity"
             android:exported="false"
-            android:label="@string/title_activity_main"
-            android:theme="@style/Theme.ControleDeEstoque" />
+            android:theme="@style/Theme.ControleDeEstoque.NoActionBar" />
         <activity
             android:name=".view.formCadastro.formCadastro"
             android:exported="true" />
