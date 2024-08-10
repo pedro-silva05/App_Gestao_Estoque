@@ -58,4 +58,18 @@
     <string name="escanear_codigo">Escanear código</string>
     <string name="venda">Venda</string>
     <string name="adicionar_ao_carrinho">Adicionar ao carrinho</string>
+    <string name="qtd">Qtd</string>
+    <string name="logo">logo</string>
+    <string name="nome_do_devedor">Nome do Devedor</string>
+    <string name="insira_um_limite_para_a_divida">Insira um limite para a dívida</string>
+    <string name="insira_a_divida_atual">Insira a dívida atual</string>
+    <string name="data_atual">Data Atual</string>
+    <string name="gerenciar_estoque_de_produtos">Gerenciar Estoque de Produtos</string>
+    <string name="gerenciar_fiados">Gerenciar Fiados</string>
+    <string name="ir_para_o_caixa_de_vendas">Ir para o Caixa de Vendas</string>
+    <string name="bem_vindo">Bem vindo!</string>
+    <string name="que_tal_come_armos_o_dia_nos_organizando">Que tal começarmos o dia nos organizando?</string>
+    <string name="fa_a_uma_venda_f_cil_e_r_pida">Faça uma venda fácil e rápida</string>
+    <string name="adicionar_conta_fiado">Adicionar Conta Fiado</string>
+    <string name="img_logo">img_logo</string>
 </resources>

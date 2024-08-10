@@ -9,9 +9,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.controledeestoque.R
 import com.example.controledeestoque.databinding.FragmentFiadoBinding
 import com.example.controledeestoque.view.utilidades.ProgressBar
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -60,7 +60,8 @@ class Fiado_Fragment : Fragment() {
 
     private fun criarListaFiado(){
         progressBar.startLoading()
-        databaseReference = FirebaseDatabase.getInstance().getReference("Fiados")
+        val uid = FirebaseAuth.getInstance().currentUser?.uid
+        databaseReference = FirebaseDatabase.getInstance().getReference("Users/$uid/Fiados")
         databaseReference.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 arrayList.clear()

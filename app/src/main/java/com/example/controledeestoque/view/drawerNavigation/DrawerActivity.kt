@@ -15,10 +15,12 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.controledeestoque.R
 import com.example.controledeestoque.databinding.ActivityDrawerBinding
 import com.example.controledeestoque.view.drawerNavigation.telas.estoque.Estoque_Fragment
-import com.example.controledeestoque.view.drawerNavigation.telas.Inicio_Fragment
+import com.example.controledeestoque.view.drawerNavigation.telas.home.Inicio_Fragment
 import com.example.controledeestoque.view.drawerNavigation.telas.fiado.Fiado_Fragment
 import com.example.controledeestoque.view.drawerNavigation.telas.realizarVenda.RealizarVendaFragment
 import com.example.controledeestoque.view.formLogin.FormLogin
+import com.example.controledeestoque.view.utilidades.MaterialShape
+import com.example.controledeestoque.view.utilidades.ProgressBar
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 
@@ -27,10 +29,13 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     private lateinit var binding: ActivityDrawerBinding
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var auth : FirebaseAuth
+    private lateinit var progressBar: ProgressBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         binding = ActivityDrawerBinding.inflate(layoutInflater)
+
+        progressBar = ProgressBar(this@DrawerActivity)
 
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -73,13 +78,14 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     }
 
     private fun sairConta(){
+        progressBar.startLoading()
         auth = FirebaseAuth.getInstance()
         auth.signOut()
 
         val intent = Intent(this, FormLogin::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
-
-        finish()
+        progressBar.isDimiss()
     }
 
     @SuppressLint("MissingSuperCall")

@@ -8,17 +8,14 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ControleDeEstoque"
         tools:targetApi="31">
         <activity
             android:name=".view.drawerNavigation.telas.realizarVenda.AddProdutosCarrinhoActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.drawerNavigation.telas.realizarVenda.MainActivity"
             android:exported="false" />
         <activity
             android:name=".view.drawerNavigation.telas.fiado.DetalhesFiadoActivity"
@@ -36,12 +33,18 @@
         <activity
             android:name=".view.formCadastro.formCadastro"
             android:exported="true" />
+
         <activity
             android:name=".view.formLogin.FormLogin"
-            android:exported="true">
+            android:exported="true"
+             />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

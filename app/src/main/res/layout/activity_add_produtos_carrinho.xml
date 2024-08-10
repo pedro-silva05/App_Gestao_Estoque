@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white_1"
+    android:background="@color/cinza_claro"
     android:fitsSystemWindows="true"
     tools:context=".view.drawerNavigation.DrawerActivity">
 
@@ -14,7 +14,7 @@
         android:layout_height="200.px"
         android:padding="30.px"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/black"
+        android:background="@color/azul_neon"
         android:orientation="horizontal"
         >
 
@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20.dp"
             android:text="@string/adicionar_ao_carrinho"
-            android:textColor="@color/black"
+            android:textColor="@color/cinza_grafite"
             android:textSize="22.sp"
             android:textStyle="bold" />
 

@@ -11,9 +11,9 @@ import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.controledeestoque.R
-import com.example.controledeestoque.databinding.ActivityFormAddProdutosBinding
 import com.example.controledeestoque.databinding.FragmentEstoqueBinding
 import com.example.controledeestoque.view.utilidades.ProgressBar
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -91,7 +91,8 @@ class Estoque_Fragment : Fragment() {
 
     private fun getProdutoData(){
         progressBar.startLoading()
-        dbref = FirebaseDatabase.getInstance().getReference("Produtos")
+        val uid = FirebaseAuth.getInstance().currentUser?.uid
+        dbref = FirebaseDatabase.getInstance().getReference("Users/$uid/Produtos")
         dbref.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 produtoArrayList.clear()

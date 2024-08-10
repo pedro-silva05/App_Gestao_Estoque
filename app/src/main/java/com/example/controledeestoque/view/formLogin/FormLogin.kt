@@ -2,26 +2,20 @@ package com.example.controledeestoque.view.formLogin
 
 import android.content.Intent
 import android.os.Bundle
-import android.renderscript.ScriptGroup.Binding
 import android.view.Gravity
-import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.controledeestoque.R
 import com.example.controledeestoque.databinding.ActivityFormLoginBinding
 import com.example.controledeestoque.view.drawerNavigation.DrawerActivity
 import com.example.controledeestoque.view.formCadastro.formCadastro
+import com.example.controledeestoque.view.utilidades.MaterialShape
 import com.example.controledeestoque.view.utilidades.ProgressBar
-
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
-import com.google.firebase.auth.FirebaseAuthWeakPasswordException
-import com.google.firebase.ktx.Firebase
 
 class FormLogin : AppCompatActivity() {
 
@@ -39,6 +33,10 @@ class FormLogin : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityFormLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        MaterialShape.applyCutCorners(this, binding.btnLogin)
+        MaterialShape.applyStyleTextInput(this, binding.emailLogin)
+        MaterialShape.applyStyleTextInput(this, binding.senhaLogin)
 
         val progressBar = ProgressBar(this)
 

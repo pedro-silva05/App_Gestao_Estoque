@@ -12,5 +12,15 @@
     <color name="white_700">#F2F2F2</color>
     <color name="blue_gray">#2C3E50</color>
     <color name="green">#006400</color>
+    <color name="fab_background_color">#FFA500</color>
+
+    <color name="azul_neon">#1F51FF</color>
+    <color name="azul_eletrico">#0077B6</color>
+    <color name="azul_royal">#4169E1</color>
+    <color name="amarelo_solar">#FFD166</color>
+    <color name="cinza_grafite">#333333</color>
+    <color name="fundo">#F8F8FF</color>
+    <color name="cinza_claro">#F0F0F0</color>
+    <color name="cinza">#EEEEEE</color>
 
 </resources>

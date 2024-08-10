@@ -4,9 +4,9 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="200dp"
-    android:background="@color/black"
-    android:padding="16dp"
-    android:gravity="bottom|start"
+    android:background="@color/amarelo_solar"
+    android:padding="20dp"
+    android:gravity="bottom"
     >
 
     <ImageView
@@ -14,12 +14,13 @@
         android:layout_height="150.px"
         android:background="@drawable/background_search_bar"
         android:layout_marginBottom="15dp"
+        android:contentDescription="@string/img_logo"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:text="Nome da Empresa"
         android:textStyle="bold"
         android:textSize="16sp"
@@ -29,7 +30,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:text="Nome de Usuário"
         android:textStyle="bold"
         android:textSize="16sp"

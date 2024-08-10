@@ -1,6 +1,8 @@
 package com.example.controledeestoque.view.drawerNavigation.telas.realizarVenda
 
 import android.content.Intent
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,6 +12,9 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.controledeestoque.databinding.FragmentRealizarVendaBinding
+import com.google.android.material.shape.CornerFamily
+import com.google.android.material.shape.MaterialShapeDrawable
+import com.google.android.material.shape.ShapeAppearanceModel
 
 class RealizarVendaFragment : Fragment() {
 
@@ -29,6 +34,8 @@ class RealizarVendaFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
         observeViewModel()
+        styleComponents()
+
         binding.floatingBtn.setOnClickListener {
             val intent = Intent(activity, AddProdutosCarrinhoActivity::class.java)
             startActivity(intent)
@@ -47,5 +54,25 @@ class RealizarVendaFragment : Fragment() {
                 adapter.setCarrinhoList(it)
             }
         })
+    }
+
+    private fun styleComponents(){
+        val shapeAppearanceModel = ShapeAppearanceModel.builder()
+            .setTopRightCorner(CornerFamily.CUT, 30f)
+            .setBottomLeftCorner(CornerFamily.CUT, 30f)
+            .build()
+
+        val btnVender = MaterialShapeDrawable(shapeAppearanceModel).apply {
+            fillColor = ColorStateList.valueOf(Color.GREEN)
+        }
+
+        val btnFiado = MaterialShapeDrawable(shapeAppearanceModel).apply {
+            fillColor = ColorStateList.valueOf(Color.RED)
+        }
+
+        binding.btnPagamento.setTextColor(Color.BLACK)
+        binding.btnAddAoFiado.setTextColor(Color.WHITE)
+        binding.btnPagamento.background = btnVender
+        binding.btnAddAoFiado.background = btnFiado
     }
 }

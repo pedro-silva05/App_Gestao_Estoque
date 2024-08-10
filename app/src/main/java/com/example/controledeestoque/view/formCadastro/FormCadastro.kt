@@ -3,28 +3,22 @@ package com.example.controledeestoque.view.formCadastro
 import android.annotation.SuppressLint
 import android.content.Intent
 import  android.os.Bundle
+import android.util.Log
 import android.view.Gravity
-import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.material3.Snackbar
-import androidx.compose.ui.graphics.Color
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.lifecycle.ReportFragment.Companion.reportFragment
 import com.example.controledeestoque.R
 import com.example.controledeestoque.databinding.ActivityFormCadastroBinding
 import com.example.controledeestoque.view.formLogin.FormLogin
-import com.google.android.material.snackbar.Snackbar
+import com.example.controledeestoque.view.utilidades.MaterialShape
 import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
-import com.google.firebase.ktx.Firebase
-
+import com.google.firebase.database.FirebaseDatabase
 class formCadastro : AppCompatActivity() {
 
     private lateinit var binding: ActivityFormCadastroBinding
@@ -36,6 +30,13 @@ class formCadastro : AppCompatActivity() {
         binding = ActivityFormCadastroBinding.inflate(layoutInflater)
         enableEdgeToEdge()
         setContentView(binding.root)
+
+        MaterialShape.applyStyleTextInput(this, binding.email)
+        MaterialShape.applyStyleTextInput(this, binding.senha)
+        MaterialShape.applyStyleTextInput(this, binding.confSenha)
+        MaterialShape.applyCutCorners(this, binding.btnCadastrar)
+
+
 
         val navigate = findViewById<TextView>(R.id.btn_navigate)
         navigate.setOnClickListener{
@@ -59,11 +60,14 @@ class formCadastro : AppCompatActivity() {
             } else {
                 auth.createUserWithEmailAndPassword(email, senha).addOnCompleteListener{ cadastro ->
                     if(cadastro.isSuccessful){
+                        val user = auth.currentUser
+                        user?.let {
+                            val uid = it.uid
+                            addUsuarioDatabase(uid)
+                        }
                         val toast = Toast.makeText(this, "Usuário cadastrado com sucesso!", Toast.LENGTH_SHORT)
                         toast.setGravity(Gravity.TOP or Gravity.CENTER_HORIZONTAL, 0, 0)
                         toast.show()
-                        binding.email.setText("")
-                        binding.senha.setText("")
                         irParaLogin()
                     }
                 }.addOnFailureListener{ exception ->
@@ -81,6 +85,24 @@ class formCadastro : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun addUsuarioDatabase(uid: String){
+        val database  = FirebaseDatabase.getInstance()
+        val userRef = database.getReference("Users/$uid")
+
+        val dadosUsuario = mapOf(
+            "Email: " to binding.email.text.toString()
+        )
+
+        userRef.setValue(dadosUsuario)
+            .addOnCompleteListener { dados ->
+                if (dados.isSuccessful){
+                    Log.d("Sucesso", "Dados enviados!")
+                }
+            }.addOnFailureListener { e ->
+                Log.e("Erro", "${e.message}")
+            }
     }
 
     private fun irParaLogin(){

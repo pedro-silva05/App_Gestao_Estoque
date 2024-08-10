@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_vertical"
-    android:background="@color/white_1"
+    android:background="@color/white"
+    android:padding="20dp"
     tools:context=".view.formLogin.FormLogin">
 
     <TextView
@@ -17,7 +18,7 @@
         android:textSize="30.dp"
         android:layout_gravity="center_horizontal"
         android:textStyle="bold"
-        android:textColor="@color/black"
+        android:textColor="@color/cinza_grafite"
         android:layout_marginBottom="20.dp"
         />
 
@@ -27,11 +28,8 @@
         android:layout_height="wrap_content"
         android:autofillHints=""
         android:hint="@string/hint_email"
-        android:layout_marginStart="20.dp"
-        android:layout_marginEnd="20.dp"
-        android:layout_marginBottom="10.dp"
-        android:padding="15dp"
-        android:background="@color/white"
+        android:padding="16dp"
+        android:layout_marginBottom="10dp"
         android:inputType="textEmailAddress"
         android:maxLines="1"
         />
@@ -42,11 +40,8 @@
         android:layout_height="wrap_content"
         android:autofillHints=""
         android:hint="@string/hint_senha"
-        android:layout_marginStart="20.dp"
-        android:layout_marginEnd="20.dp"
         android:layout_marginBottom="10.dp"
-        android:padding="15dp"
-        android:background="@color/white"
+        android:padding="16dp"
         android:inputType="textPassword"
         android:maxLines="1"
         />
@@ -57,11 +52,9 @@
         android:layout_height="wrap_content"
         android:text="@string/btn_login"
         android:layout_marginTop="10.dp"
-        android:layout_marginStart="20.dp"
-        android:layout_marginEnd="20.dp"
-        android:background="@color/black"
-        android:textColor="@color/white"
-        android:textSize="15.sp"
+        android:textColor="@color/black"
+        android:background="@color/amarelo_solar"
+        android:textSize="16.sp"
         />
 
     <TextView
@@ -74,7 +67,7 @@
         android:layout_marginTop="10.dp"
         android:textAllCaps="false"
         android:textSize="16.sp"
-        android:textColor="@color/black"
+        android:textColor="@color/cinza_grafite"
         android:textStyle="bold"
         />
 

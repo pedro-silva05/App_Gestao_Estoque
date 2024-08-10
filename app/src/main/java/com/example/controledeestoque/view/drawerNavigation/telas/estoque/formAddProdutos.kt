@@ -7,6 +7,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.controledeestoque.R
 import com.example.controledeestoque.databinding.ActivityFormAddProdutosBinding
+import com.example.controledeestoque.view.utilidades.MaterialShape
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
@@ -21,6 +23,13 @@ class formAddProdutos : AppCompatActivity() {
 
         binding = ActivityFormAddProdutosBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        MaterialShape.applyStyleTextInput(this, binding.valor)
+        MaterialShape.applyStyleTextInput(this, binding.categoria)
+        MaterialShape.applyStyleTextInput(this, binding.quantidade)
+        MaterialShape.applyStyleTextInput(this, binding.codbarras)
+        MaterialShape.applyStyleTextInput(this, binding.descricao)
+        MaterialShape.applyCutCorners(this, binding.addProduto)
 
         binding.backBtn.setOnClickListener{
             finish()
@@ -49,13 +58,22 @@ class formAddProdutos : AppCompatActivity() {
             val valor = binding.valor.text.toString().toDoubleOrNull()
             val quantidade = binding.quantidade.text.toString().toIntOrNull()
 
-            if (binding.descricao.text.isEmpty() || binding.codbarras.text.isEmpty() || binding.categoria.text.isEmpty() || binding.quantidade.text.isEmpty()){
-                Toast.makeText(this, "Por favor, Preencha todos os campos", Toast.LENGTH_SHORT).show()
+            if (descricao.isEmpty() || cod_barras.isEmpty() || categoria.isEmpty()){
+                Toast.makeText(this,  "Preencha todos os campos!", Toast.LENGTH_SHORT).show()
             } else{
                 when {
+                    valor == null -> Toast.makeText(
+                        this,
+                        "Por favor, insira um VALOR válido",
+                        Toast.LENGTH_SHORT
+                    ).show()
 
-                    valor == null -> Toast.makeText(this, "Por favor, insira um valor válido", Toast.LENGTH_SHORT).show()
-                    quantidade == null -> Toast.makeText(this, "Por favor, insira uma quantidade válida", Toast.LENGTH_SHORT).show()
+                    quantidade == null -> Toast.makeText(
+                        this,
+                        "Por favor, insira uma QUANTIDADE válida",
+                        Toast.LENGTH_SHORT
+                    ).show()
+
                     else -> {
                         val produto = Produtos(
                             descricao,
@@ -64,7 +82,10 @@ class formAddProdutos : AppCompatActivity() {
                             valor,
                             quantidade
                         )
-                        database.child("Produtos").push().setValue(produto)
+
+                        val uid = FirebaseAuth.getInstance().currentUser?.uid
+
+                        database.child("Users/$uid/Produtos").push().setValue(produto)
                             .addOnSuccessListener {
                                 Toast.makeText(
                                     this,

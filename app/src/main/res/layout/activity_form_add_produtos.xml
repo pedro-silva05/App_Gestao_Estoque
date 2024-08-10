@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white_1"
+    android:background="@color/white"
     android:fitsSystemWindows="true"
     tools:context=".view.drawerNavigation.telas.estoque.formAddProdutos">
 
@@ -12,7 +12,7 @@
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="150.px"
-        android:background="@color/black"
+        android:background="@color/azul_neon"
         tools:ignore="MissingConstraints">
 
         <ImageButton
@@ -49,22 +49,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16.dp"
-            android:paddingBottom="180.px">
+            android:padding="16.dp">
 
             <EditText
                 android:id="@+id/descricao"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10.dp"
-                android:background="@drawable/background_textedit"
                 android:gravity="top"
                 android:hint="@string/descricao"
                 android:importantForAutofill="no"
                 android:inputType="textMultiLine"
                 android:lines="5"
-                android:padding="16.dp"
-                android:textSize="16.sp"
+                android:padding="16dp"
+                android:textSize="16sp"
                 android:textColor="@color/black"
                 />
 
@@ -73,13 +71,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10.dp"
-                android:background="@drawable/background_textedit"
                 android:hint="@string/codbarras"
                 android:importantForAutofill="no"
                 android:inputType="number"
                 android:maxLines="1"
-                android:padding="16.dp"
-                android:textSize="16.sp"
+                android:padding="16dp"
+                android:textSize="16sp"
                 android:textColor="@color/black"
                 />
 
@@ -88,13 +85,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10.dp"
-                android:background="@drawable/background_textedit"
                 android:hint="@string/categoria"
                 android:importantForAutofill="no"
                 android:inputType="text"
                 android:maxLines="1"
-                android:padding="16.dp"
-                android:textSize="16.sp"
+                android:padding="16dp"
+                android:textSize="16sp"
                 android:textColor="@color/black"
                 />
 
@@ -103,13 +99,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10.dp"
-                android:background="@drawable/background_textedit"
                 android:hint="@string/valor"
                 android:importantForAutofill="no"
                 android:inputType="text"
                 android:maxLines="1"
-                android:padding="16.dp"
-                android:textSize="16.sp"
+                android:padding="16dp"
+                android:textSize="16sp"
                 android:textColor="@color/black"
                 />
 
@@ -118,13 +113,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10.dp"
-                android:background="@drawable/background_textedit"
                 android:hint="@string/quantidade"
                 android:importantForAutofill="no"
                 android:inputType="number"
                 android:maxLines="1"
-                android:padding="16.dp"
-                android:textSize="16.sp"
+                android:padding="16dp"
+                android:textSize="16sp"
                 android:textColor="@color/black"
                 />
 
@@ -133,13 +127,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20.dp"
-                android:background="@drawable/background_btn"
-                android:padding="15.dp"
+                android:padding="16dp"
                 android:text="@string/add_produto"
                 android:textAllCaps="false"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="16.sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"
+                />
 
         </LinearLayout>
     </ScrollView>

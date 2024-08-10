@@ -11,4 +11,26 @@
     <style name="Theme.ControleDeEstoque.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.ControleDeEstoque.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Fabs">
+        <item name="cornerSize">0%</item>
+        <item name="cornerFamilyTopRight">cut</item>
+        <item name="cornerSizeTopRight">30%</item>
+        <item name="cornerFamilyBottomLeft">cut</item>
+        <item name="cornerSizeBottomLeft">30%</item>
+    </style>
+
+    <style name="card_view">
+        <item name="cardMaxElevation">5dp</item>
+        <item name="cardCornerRadius">15dp</item>
+        <item name="cardUseCompatPadding">true</item>
+    </style>
+
+    <style name="btn">
+        <item name="cornerFamilyTopRight">cut</item>
+        <item name="cornerSizeTopRight">30%</item>
+        <item name="cornerFamilyBottomLeft">cut</item>
+        <item name="cornerSizeBottomLeft">30%</item>
+    </style>
+
 </resources>
